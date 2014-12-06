@@ -8,10 +8,16 @@
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "modules" : ["cocos2d"],
+    "modules" : ["cocos2d", "extensions"],
 
     "jsList" : [
         "src/resource.js",
-        "src/app.js"
+        "src/app.js",
+        "src/goodluck.js",
+        "src/elements.js",
+        "src/game.js",
+        "src/gameOver.js",
+        "src/setting.js",
+        "src/SceneManager.js"
     ]
 }

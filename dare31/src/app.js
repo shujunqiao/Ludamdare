@@ -1,7 +1,14 @@
 
-var HelloWorldLayer = cc.Layer.extend({
+
+var scMgr = null;
+var g_len = 30;
+var g_line = 13;
+
+var MyLayer = cc.Layer.extend({
+    bk:null,
     sprite:null,
-    ctor:function () {
+    init:function () {
+
         //////////////////////////////
         // 1. super init first
         this._super();
@@ -9,70 +16,81 @@ var HelloWorldLayer = cc.Layer.extend({
         /////////////////////////////
         // 2. add a menu item with "X" image, which is clicked to quit the program
         //    you may modify it.
-        // ask the window size
-        var size = cc.winSize;
+        // ask director the window size
+        var size = cc.director.getWinSize();
+        scMgr = SceneManager.getInstance();
 
-        // add a "close" icon to exit the progress. it's an autorelease object
-        var closeItem = new cc.MenuItemImage(
-            res.CloseNormal_png,
-            res.CloseSelected_png,
+        var newBtn = getBtn(this.onClick, this, "new game", 10);
+        newBtn.setPosition(size.width/2, size.height/2);
+
+        var btnBegin = cc.MenuItemImage.create(
+            res.btn_Begin_0,
+            res.btn_Begin_1,
             function () {
-                cc.log("Menu is clicked!");
-            }, this);
-        closeItem.attr({
-            x: size.width - 20,
-            y: 20,
-            anchorX: 0.5,
-            anchorY: 0.5
-        });
+                scMgr.runScene(sc_idx.GAME);
+            },this);
+        btnBegin.setAnchorPoint(0.5, 0.5);
+        btnBegin.setPosition(size.width*0.8,size.height*0.27);
 
-        var menu = new cc.Menu(closeItem);
-        menu.x = 0;
-        menu.y = 0;
-        this.addChild(menu, 1);
+        var menu = cc.Menu.create(btnBegin);
+        menu.setPosition(0, 0);
+        this.addChild(menu, 2);
+
+//        //add text
+//        var txt = new ccui.TextField();
+//        txt.fontName = "Marker Felt";
+////        txt.setTouchEnabled(true);
+//        this.addChild(txt,2);
+//        txt.setTextColor(cc.color(100,200,100));
+//        txt.setString("A Text");
+//        txt.setPosition(100,100);
+
+//        var color = cc.color(255,255,255);
+//        var bk_ly = new cc.LayerColor(color, size.width, size.height);
+//        this.addChild(bk_ly);
 
         /////////////////////////////
         // 3. add your codes below...
-        // add a label shows "Hello World"
-        // create and initialize a label
-        var helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
-        // position the label on the center of the screen
-        helloLabel.x = size.width / 2;
-        helloLabel.y = 0;
-        // add the label as a child to this layer
-        this.addChild(helloLabel, 5);
 
-        // add "HelloWorld" splash screen"
-        this.sprite = new cc.Sprite(res.HelloWorld_png);
-        this.sprite.attr({
-            x: size.width / 2,
-            y: size.height / 2,
-            scale: 0.5,
-            rotation: 180
-        });
-        this.addChild(this.sprite, 0);
-
-        this.sprite.runAction(
-            cc.sequence(
-                cc.rotateTo(2, 0),
-                cc.scaleTo(2, 1, 1)
-            )
-        );
-        helloLabel.runAction(
-            cc.spawn(
-                cc.moveBy(2.5, cc.p(0, size.height - 40)),
-                cc.tintTo(2.5,255,125,0)
-            )
-        );
-        return true;
+        // add "Helloworld" splash screen"
+        this.sprite = cc.Sprite.create(res.Back_0);
+        this.sprite.setAnchorPoint(0.5, 0.5);
+        this.sprite.setPosition(this.sprite.getContentSize().width / 2, size.height / 2);
+        this.sprite.setScale(size.height/this.sprite.getContentSize().height);
+        this.addChild(this.sprite, 1);
+    },
+    onClick:function(item){
+        var tag = item.getTag();
+        cc.log("item:"+tag);
+        if (tag == 3)
+            scMgr.runScene(sc_idx.MENU);
+        else if(tag == 10){
+            scMgr.runScene(sc_idx.GAME);
+        }
     }
 });
 
-var HelloWorldScene = cc.Scene.extend({
+var getBtn = function(selector, target, txt, tag){
+    var lb = cc.LabelTTF.create(txt, "Impact", 38);
+    var btn = cc.MenuItemLabel.create(lb, selector, target);
+    btn.setTag(tag);
+    return btn;
+}
+
+var getImgBtn = function(img0, img1, selector, target, tag){
+    var img = new cc.MenuItemImage(img0, img1, selector, target);
+    img.setTag(tag);
+    return img;
+}
+
+var MyScene = cc.Scene.extend({
     onEnter:function () {
         this._super();
-        var layer = new HelloWorldLayer();
+    },
+    init:function(){
+        var layer = new MyLayer();
         this.addChild(layer);
+        layer.init();
     }
 });
 
