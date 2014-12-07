@@ -3,7 +3,7 @@ var scMgr = null;
 
 var TIMER_MINUTE = 60;
 
-var BOX_NUM_MAX = 10;
+var BOX_NUM_MAX = 12;
 
 var BOX_RADIUS = 60;
 var BORDER_PLAY = {
@@ -14,7 +14,7 @@ var BORDER_PLAY = {
 };
 
 var gGameLayer = null;
-var GAME_END_TIMER = 63;
+var GAME_END_TIMER = 100;
 
 var EFF_INTERVAL_FRAME = 6;
 var EFF_SPACE_Y = 5;
@@ -104,6 +104,7 @@ var GameLayer = cc.Layer.extend({
 //            box.y = b_y;
             box.setPosition(getRandPos());
             box.setIdx(i);
+            box.runAction(getRandAction());
             this.arrBoxes[i] = box;
         }
 
@@ -297,6 +298,9 @@ var GameLayer = cc.Layer.extend({
         this.bGameEnd = true;
         PlayMusic.getInstance().stopMusic();
         setGameOverStatus(isWin);
+        if(isWin){
+            setGameScore(this.scoreV.getScore());
+        }
         scMgr.runScene(sc_idx.GAME_OVER);
     },
     onClickedOneBox:function(idx){
@@ -308,6 +312,7 @@ var GameLayer = cc.Layer.extend({
         this.addChild(box);
         box.setPosition(getRandPos());
         box.setIdx(idx);
+        box.runAction(getRandAction());
         this.arrBoxes[idx] = box;
     },
     onDestoryOneBox:function(idx){
@@ -318,6 +323,7 @@ var GameLayer = cc.Layer.extend({
         this.addChild(box);
         box.setPosition(getRandPos());
         box.setIdx(idx);
+        box.runAction(getRandAction());
         this.arrBoxes[idx] = box;
     },
     addScore:function(score){
@@ -330,6 +336,14 @@ var GameLayer = cc.Layer.extend({
         this.hp.subBlood(blood);
     }
 });
+
+var getRandAction = function(){
+    var dTime = GetRandomNum(2,5);
+    var dx = GetRandomNum(-300,300);
+    var dy = GetRandomNum(-300,300);
+    var act = cc.moveBy(dTime, new cc.Point(dx,dy), 0);
+    return act;
+}
 
 var getRandPos = function(){
     var _x = GetRandomNum(BORDER_PLAY.x,BORDER_PLAY.w);

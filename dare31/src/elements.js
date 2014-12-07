@@ -65,6 +65,9 @@ var SpScore = cc.Layer.extend({
         this._score = score;
 //        console.log(this.numSp, this._score);
         this.numSp.setNumber(this._score);
+    },
+    getScore:function(){
+        return this._score;
     }
 });
 

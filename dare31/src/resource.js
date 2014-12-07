@@ -14,8 +14,6 @@ var res = {
     Back_1:"res/back_1.png",
     btn_Begin_0:"res/begin_normal.png",
     btn_Begin_1:"res/begin_selected.png",
-    btn_End_0:"res/end_normal.png",
-    btn_End_1:"res/end_selected.png",
     btn_Return_0:"res/return_0.png",
     btn_Return_1:"res/return_1.png",
     btn_exit_0:"res/exit_0.png",
@@ -33,7 +31,10 @@ var res = {
     sound_po_1:"res/po_1.wav",
     sound_po_2:"res/po_2.wav",
     sound_lose:"res/lose.wav",
-    sound_win:"res/win.wav"
+    sound_win:"res/win.wav",
+    Font_arial:"res/arial.ttf",
+    Font_bmf_ttf:"res/bitmapFont.fnt",
+    Font_bmf_png:"res/bitmapFont.png"
 };
 
 var g_resources = [];

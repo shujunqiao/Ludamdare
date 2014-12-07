@@ -1,6 +1,7 @@
 /**
  * Created by cocos-q on 14-12-6.
  */
+
 var GameOverLayer = cc.Layer.extend({
     ctor:function(bWin){
         this._super();
@@ -12,18 +13,25 @@ var GameOverLayer = cc.Layer.extend({
         //
         var sp_bk;
         cc.log("in gameover:"+bWin);
+        var rankList = new RankingList();
         if(bWin){
             sp_bk = new cc.Sprite(res.end_win);
             PlayMusic.getInstance().playSound(SOUND_TYPE.win);
+            rankList.setResult(getGameScore());
         }
         else{
             sp_bk = new cc.Sprite(res.end_lose);
             var lyWhite = new cc.LayerColor(cc.color(255,255,255));
             this.addChild(lyWhite);
             PlayMusic.getInstance().playSound(SOUND_TYPE.lose);
+//            rankList.setResult(-1);
         }
         this.addChild(sp_bk);
         sp_bk.setPosition(size.width/2, size.height/2);
+
+        this.addChild(rankList);
+        rankList.setPosition(size.width*0.15, size.height*0.8);
+        rankList.setAnchorPoint(0,0);
 
         var menu = new cc.Menu();
         var btnReturn = new cc.MenuItemImage(res.btn_exit_0,
@@ -57,4 +65,12 @@ var setGameOverStatus = function(bWin){
 }
 var getGameOverStatus = function(){
     return gameEndWithWin;
+}
+
+var gameEndScore = 0;
+var setGameScore = function(score){
+    gameEndScore = score;
+}
+var getGameScore = function(){
+    return gameEndScore;
 }

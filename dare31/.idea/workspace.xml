@@ -26,25 +26,34 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="47" selection-start="1774" selection-end="1780" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1590">
+            <state line="59" column="47" selection-start="1774" selection-end="1780" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1590">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="game.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="1055" selection-end="1055" vertical-scroll-proportion="154.0" vertical-offset="4799" max-vertical-offset="5415">
+            <state line="16" column="24" selection-start="231" selection-end="231" vertical-scroll-proportion="0.38961038" vertical-offset="0" max-vertical-offset="5625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="playMusic.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/playMusic.js">
+      <file leaf-file-name="CCActionInterval.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/actions/CCActionInterval.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="48" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="885">
+            <state line="1408" column="3" selection-start="43844" selection-end="43844" vertical-scroll-proportion="0.0" vertical-offset="20551" max-vertical-offset="52755">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rankingList.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/rankingList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="10" selection-start="1075" selection-end="1075" vertical-scroll-proportion="-5.769231" vertical-offset="405" max-vertical-offset="2340">
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -52,13 +61,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rankingList.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/rankingList.js">
+      <file leaf-file-name="CCEditBox.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/extensions/editbox/CCEditBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="5" selection-start="2517" selection-end="2517" vertical-scroll-proportion="0.8598131" vertical-offset="633" max-vertical-offset="1290">
-              <folding>
-                <element signature="e#0#41#0" expanded="false" />
-              </folding>
+            <state line="403" column="4" selection-start="13293" selection-end="13293" vertical-scroll-proportion="0.0" vertical-offset="5483" max-vertical-offset="10395">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameOver.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/gameOver.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="3" selection-start="41" selection-end="41" vertical-scroll-proportion="-1.1538461" vertical-offset="0" max-vertical-offset="1215">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,16 +82,7 @@
       <file leaf-file-name="elements.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/elements.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="255" column="0" selection-start="6095" selection-end="6095" vertical-scroll-proportion="15.538462" vertical-offset="4229" max-vertical-offset="4845">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="26" selection-start="407" selection-end="407" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="450">
+            <state line="67" column="6" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="4890">
               <folding />
             </state>
           </provider>
@@ -93,19 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gameOver.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gameOver.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="21" selection-start="400" selection-end="409" vertical-scroll-proportion="4.576923" vertical-offset="359" max-vertical-offset="975">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="resource.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resource.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="22" selection-start="489" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+            <state line="34" column="31" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -127,16 +125,16 @@
         <option value="$PROJECT_DIR$/src/effects.js" />
         <option value="$PROJECT_DIR$/src/GameOverScene.js" />
         <option value="$PROJECT_DIR$/main.js" />
-        <option value="$PROJECT_DIR$/src/elements.js" />
         <option value="$PROJECT_DIR$/src/app.js" />
-        <option value="$PROJECT_DIR$/src/game.js" />
         <option value="$PROJECT_DIR$/src/goodluck.js" />
         <option value="$PROJECT_DIR$/src/playMusic.js" />
-        <option value="$PROJECT_DIR$/src/resource.js" />
-        <option value="$PROJECT_DIR$/src/gameOver.js" />
         <option value="$PROJECT_DIR$/project.json" />
         <option value="$PROJECT_DIR$/src/SceneManager.js" />
+        <option value="$PROJECT_DIR$/src/resource.js" />
+        <option value="$PROJECT_DIR$/src/elements.js" />
+        <option value="$PROJECT_DIR$/src/gameOver.js" />
         <option value="$PROJECT_DIR$/src/rankingList.js" />
+        <option value="$PROJECT_DIR$/src/game.js" />
       </list>
     </option>
   </component>
@@ -205,6 +203,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dare31" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dare31" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -220,6 +232,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -301,71 +314,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/CCBoot.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1621" column="27" selection-start="50400" selection-end="50400" vertical-scroll-proportion="-7.423077" vertical-offset="23777" max-vertical-offset="32865">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="34" selection-start="2724" selection-end="2724" vertical-scroll-proportion="0.0" vertical-offset="331" max-vertical-offset="990">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/event-manager/CCEventManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="650" column="4" selection-start="26227" selection-end="26227" vertical-scroll-proportion="0.33227345" vertical-offset="9196" max-vertical-offset="14955">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/sprites/CCSprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="0" selection-start="11983" selection-end="11983" vertical-scroll-proportion="0.33227345" vertical-offset="3961" max-vertical-offset="24315">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/audio/CCAudio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="432" column="7" selection-start="14435" selection-end="14435" vertical-scroll-proportion="0.30842608" vertical-offset="5926" max-vertical-offset="17340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elements.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="255" column="0" selection-start="6095" selection-end="6095" vertical-scroll-proportion="15.538462" vertical-offset="4229" max-vertical-offset="4845">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="1055" selection-end="1055" vertical-scroll-proportion="154.0" vertical-offset="4799" max-vertical-offset="5415">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameOver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="21" selection-start="400" selection-end="409" vertical-scroll-proportion="4.576923" vertical-offset="359" max-vertical-offset="975">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/playMusic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="48" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/goodluck.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="0" selection-start="1553" selection-end="1553" vertical-scroll-proportion="-4.6538463" vertical-offset="1079" max-vertical-offset="1695">
@@ -373,20 +321,6 @@
             <marker date="1417936012000" expanded="true" signature="1496:2249" placeholder="{...}" />
             <marker date="1417936012000" expanded="true" signature="1528:2247" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="47" selection-start="1774" selection-end="1780" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1590">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resource.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="22" selection-start="489" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -404,12 +338,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="47" selection-start="1774" selection-end="1780" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1590">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/labels/CCLabelAtlas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="2146" selection-end="2146" vertical-scroll-proportion="-0.4308426" vertical-offset="586" max-vertical-offset="5805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/labels/CCLabelBMFont.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="32" selection-start="5823" selection-end="5830" vertical-scroll-proportion="0.0" vertical-offset="1471" max-vertical-offset="18075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1469" column="18" selection-start="26168" selection-end="26168" vertical-scroll-proportion="0.33279485" vertical-offset="21829" max-vertical-offset="32580">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="31" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/labelttf/CCLabelTTF.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="148" column="44" selection-start="6454" selection-end="6462" vertical-scroll-proportion="0.5066007" vertical-offset="1553" max-vertical-offset="18750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameOver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="3" selection-start="41" selection-end="41" vertical-scroll-proportion="-1.1538461" vertical-offset="0" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/extensions/editbox/CCEditBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="403" column="4" selection-start="13293" selection-end="13293" vertical-scroll-proportion="0.0" vertical-offset="5483" max-vertical-offset="10395">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/elements.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="6" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0" vertical-offset="484" max-vertical-offset="4890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/rankingList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="5" selection-start="2517" selection-end="2517" vertical-scroll-proportion="0.8598131" vertical-offset="633" max-vertical-offset="1290">
+        <state line="39" column="10" selection-start="1075" selection-end="1075" vertical-scroll-proportion="-5.769231" vertical-offset="405" max-vertical-offset="2340">
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/external/chipmunk/chipmunk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2947" column="4" selection-start="78502" selection-end="78502" vertical-scroll-proportion="0.33333334" vertical-offset="44003" max-vertical-offset="93015">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/actions/CCActionInterval.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1408" column="3" selection-start="43844" selection-end="43844" vertical-scroll-proportion="0.0" vertical-offset="20551" max-vertical-offset="52755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="24" selection-start="231" selection-end="231" vertical-scroll-proportion="0.38961038" vertical-offset="0" max-vertical-offset="5625">
+          <folding />
         </state>
       </provider>
     </entry>

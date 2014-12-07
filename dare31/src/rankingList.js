@@ -9,30 +9,100 @@ var TOP_KEY = {
     t3:"TOP_SCORE_3"
 };
 
+var FONT_SCORE_SIZE = 30;
+
 var RankingList = cc.Layer.extend({
     arrList:null,
     ctor:function(){
         this._super();
 
         var curStorage = cc.sys.localStorage;
-        curStorage.setItem(TOP_KEY.t1, 130);
-        curStorage.setItem(TOP_KEY.t3, 140);
+//        curStorage.removeItem(TOP_KEY.t1);
+//        curStorage.removeItem(TOP_KEY.t2);
+//        curStorage.removeItem(TOP_KEY.t3);
         var t1 = curStorage.getItem(TOP_KEY.t1);
         var t2 = curStorage.getItem(TOP_KEY.t2);
         var t3 = curStorage.getItem(TOP_KEY.t3);
         console.log("in rankinglist:",t1,t2,t3);
         this.arrList = [];
-        if(t1 != undefined)
-            this.arrList.push(t1);
-        if(t2 != undefined)
-            this.arrList.push(t2);
-        if(t3 != undefined)
-            this.arrList.push(t3);
+        if(t1 != undefined && t1 != null)
+            this.arrList.push(parseInt(t1));
+        if(t2 != undefined && t2 != null)
+            this.arrList.push(parseInt(t2));
+        if(t3 != undefined && t3 != null)
+            this.arrList.push(parseInt(t3));
     },
     getTop3List:function(){
         return this.arrList;
     },
+    setResult:function(score){
+        var str = "";
+        //
+        var rankN = this.getThisRank(score);
+        console.log(this.arrList);
+        //
+//        this.arrList.sort();
+//        console.log(this.arrList);
+        var curStorage = cc.sys.localStorage;
+        for(var idx in this.arrList){
+            var temp = parseInt(idx)+1;
+            var key = "t"+temp.toString();
+            console.log("key:", key);
+            curStorage.setItem(TOP_KEY[key], this.arrList[idx]);
+        }
+        //display top3
+        var t_h = -43;
+        var arrLbs = [];
+        for(var idx in this.arrList){
+//            var lbTop = new cc.LabelBMFont(this.arrList[idx].toString(), res.Font_bmf_ttf);
+            var temp = parseInt(idx)+1;
+            var lbTop = new cc.LabelTTF("top"+temp+": "+this.arrList[idx], res.Font_arial, FONT_SCORE_SIZE);
+            lbTop.y = t_h * idx;
+            this.addChild(lbTop);
+            arrLbs.push(lbTop);
+        }
+
+        var newLb = new cc.LabelBMFont("new", res.Font_bmf_ttf);
+        if(score > 0){
+            this.addChild(newLb);
+            var lb = null;
+            switch (rankN){
+                case 1:
+                    str = "Great Job!";
+                    lb = arrLbs[0];
+                    break;
+                case 2:
+                    str = "Good Job!";
+                    lb = arrLbs[1];
+                    break;
+                case 3:
+                    str = "Just so so!";
+                    lb = arrLbs[2];
+                    break;
+                default:
+                    newLb.setVisible(false);
+                    str = "Come on!";
+                    break;
+            }
+
+            if(lb != null){
+                var size = lb.getContentSize();
+                var pos = lb.getPosition();
+                newLb.setPosition(pos.x+size.width/2+30,pos.y+10);
+                newLb.setScale(0.4);
+            }
+        }
+        else{
+            str = "unlucky!!!";
+        }
+        var lb = new cc.LabelBMFont(str, res.Font_bmf_ttf);
+        lb.setPositionY(-t_h);
+        this.addChild(lb);
+    },
     getThisRank:function(score){
+        if(score < 1){
+            return -1;
+        }
         var len = this.arrList.length;
         switch (len){
             case 0:
