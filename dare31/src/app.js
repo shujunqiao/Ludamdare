@@ -36,6 +36,8 @@ var MyLayer = cc.Layer.extend({
         menu.setPosition(0, 0);
         this.addChild(menu, 2);
 
+//        var rank = new RankingList();
+
 //        //add text
 //        var txt = new ccui.TextField();
 //        txt.fontName = "Marker Felt";

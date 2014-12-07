@@ -54,7 +54,7 @@ cc.game.onStart = function(){
     //load resources
     cc.LoaderScene.preload(g_resources, function () {
         var scMgr = SceneManager.getInstance();
-        scMgr.runScene(sc_idx.GAME);
+        scMgr.runScene(sc_idx.LOGIN);
 //        cc.director.runScene(new HelloWorldScene());
     }, this);
 };

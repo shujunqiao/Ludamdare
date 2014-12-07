@@ -11,10 +11,10 @@ var BORDER_PLAY = {
     y:100+BOX_RADIUS,
     w:960-BOX_RADIUS,
     h:300
-}
+};
 
 var gGameLayer = null;
-var GAME_END_TIMER = 10;
+var GAME_END_TIMER = 60;
 
 var GameLayer = cc.Layer.extend({
     hp:null,

@@ -11,6 +11,7 @@ var GameOverLayer = cc.Layer.extend({
         scMgr = SceneManager.getInstance();
         //
         var sp_bk;
+        cc.log("in gameover:"+bWin);
         if(bWin){
             sp_bk = new cc.Sprite(res.end_win);
         }
