@@ -70,7 +70,7 @@ var AllEffects = [EffectAdd20, EffectAdd30, EffectAdd40, EffectAdd50, EffectBomb
 var GetGameEffect = function(){
     var idx = GetRandomNum(0, AllEffects.length);
     idx %= AllEffects.length;
-    cc.log("get game effect:"+idx);
+//    cc.log("get game effect:"+idx);
     var eff = new (AllEffects[idx])();
     return eff;
 }

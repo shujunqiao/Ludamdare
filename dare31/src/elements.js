@@ -257,7 +257,7 @@ var Treasure = cc.Layer.extend({
         this.scheduleUpdate();
     },
     checkTouched:function(pos){
-        console.log("checkTouched, pos:", pos, this.x, this.y);
+//        console.log("checkTouched, pos:", pos, this.x, this.y);
         if(pos.x < this.x-BOX_TOUCH_SIZE.w || pos.x > this.x+BOX_TOUCH_SIZE.w ||
             pos.y > this.y+BOX_TOUCH_SIZE.h || pos.y < this.y-BOX_TOUCH_SIZE.h){
             return false;

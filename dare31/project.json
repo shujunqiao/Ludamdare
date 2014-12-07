@@ -17,7 +17,7 @@
         "src/elements.js",
         "src/game.js",
         "src/gameOver.js",
-        "src/setting.js",
+        "src/playMusic.js",
         "src/rankingList.js",
         "src/SceneManager.js"
     ]

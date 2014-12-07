@@ -56,6 +56,8 @@ var GameLayer = cc.Layer.extend({
             res.btn_Return_0,
             res.btn_Return_1,
             function () {
+                PlayMusic.getInstance().stopMusic();
+                PlayMusic.getInstance().playSound(SOUND_TYPE.PO_2);
                 scMgr.runScene(sc_idx.LOGIN);
             },this);
         closeItem.setAnchorPoint(0.5, 0.5);
@@ -125,6 +127,8 @@ var GameLayer = cc.Layer.extend({
         this.touchBeganPos = new cc.Point(0,0);
         this._curEffects = [];
         this.scheduleUpdate();
+
+        PlayMusic.getInstance().playMusic();
     },
     onTouchBegan:function(touch, event){
         this.touchBeganPos = touch.getLocation();
@@ -200,6 +204,11 @@ var GameLayer = cc.Layer.extend({
                         break;
                 }
                 break;
+            case 4:
+                var eff_sum = 0;
+                for(var item in arrClicked){
+                    eff_sum += this.arrBoxes[arrClicked[item]]._effect;
+                }
             default :
                 for(var idx in arrClicked){
                     this.arrBoxes[arrClicked[idx]].onClick();
@@ -286,12 +295,14 @@ var GameLayer = cc.Layer.extend({
     gameOver:function(isWin){
         cc.log("game is over:"+isWin);
         this.bGameEnd = true;
+        PlayMusic.getInstance().stopMusic();
         setGameOverStatus(isWin);
         scMgr.runScene(sc_idx.GAME_OVER);
     },
     onClickedOneBox:function(idx){
 //        cc.log("clicked: "+idx);
         this.removeChild(this.arrBoxes[idx], true);
+        PlayMusic.getInstance().playSound(SOUND_TYPE.PO_1);
 
         var box = new Treasure();
         this.addChild(box);
@@ -315,6 +326,7 @@ var GameLayer = cc.Layer.extend({
     },
     subBlood:function(blood){
 //        cc.log("subBlood: "+blood);
+        PlayMusic.getInstance().playSound(SOUND_TYPE.BOMB);
         this.hp.subBlood(blood);
     }
 });

@@ -14,11 +14,13 @@ var GameOverLayer = cc.Layer.extend({
         cc.log("in gameover:"+bWin);
         if(bWin){
             sp_bk = new cc.Sprite(res.end_win);
+            PlayMusic.getInstance().playSound(SOUND_TYPE.win);
         }
         else{
             sp_bk = new cc.Sprite(res.end_lose);
             var lyWhite = new cc.LayerColor(cc.color(255,255,255));
             this.addChild(lyWhite);
+            PlayMusic.getInstance().playSound(SOUND_TYPE.lose);
         }
         this.addChild(sp_bk);
         sp_bk.setPosition(size.width/2, size.height/2);

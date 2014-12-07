@@ -26,7 +26,14 @@ var res = {
     number_life:"res/number_life.png",
     number_lan:"res/number_lan.png",
     end_win:"res/end_win.png",
-    end_lose:"res/end_lose.png"
+    end_lose:"res/end_lose.png",
+    bk_music_1:"res/bk_music_1.mp3",
+    sound_bomb:"res/bomb_0.wav",
+    sound_po_0:"res/po_0.wav",
+    sound_po_1:"res/po_1.wav",
+    sound_po_2:"res/po_2.wav",
+    sound_lose:"res/lose.wav",
+    sound_win:"res/win.wav"
 };
 
 var g_resources = [];

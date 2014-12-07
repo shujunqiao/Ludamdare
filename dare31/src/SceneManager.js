@@ -17,7 +17,6 @@ var SceneManager = cc.Class.extend({
     },
     initScene:function(){
         this.addScene(MyScene, sc_idx.LOGIN);
-        this.addScene(settingScene, sc_idx.MENU);
         this.addScene(GameScene, sc_idx.GAME);
         this.addScene(GameOverScene, sc_idx.GAME_OVER);
     },

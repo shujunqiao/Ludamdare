@@ -23,10 +23,12 @@ var MyLayer = cc.Layer.extend({
         var newBtn = getBtn(this.onClick, this, "new game", 10);
         newBtn.setPosition(size.width/2, size.height/2);
 
-        var btnBegin = cc.MenuItemImage.create(
+        var btnBegin = new cc.MenuItemImage(
             res.btn_Begin_0,
             res.btn_Begin_1,
             function () {
+                PlayMusic.getInstance().playSound(SOUND_TYPE.PO_2);
+
                 scMgr.runScene(sc_idx.GAME);
             },this);
         btnBegin.setAnchorPoint(0.5, 0.5);
