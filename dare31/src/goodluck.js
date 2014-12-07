@@ -10,10 +10,10 @@ var BaseEffect = cc.Class.extend({
     ctor:function(){
 //        this._super();
 
-        cc.log("in BaseEffects");
+//        cc.log("in BaseEffects");
     },
     playAnimation:function(idx){
-        cc.log("play animation:"+idx);
+//        cc.log("play animation:"+idx);
     }
 });
 
@@ -28,7 +28,7 @@ var EffectAdd = BaseEffect.extend({
     _score:0,
     ctor:function(){
         this._super();
-        cc.log("EffectAdd");
+
         this.playAnimation(1);
         this.bloodEff = BLOOD_EFF.ADD_BLOOD;
     }

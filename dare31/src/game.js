@@ -3,7 +3,7 @@ var scMgr = null;
 
 var TIMER_MINUTE = 60;
 
-var BOX_NUM_MAX = 3;
+var BOX_NUM_MAX = 10;
 
 var BOX_RADIUS = 60;
 var BORDER_PLAY = {
@@ -164,7 +164,7 @@ var GameLayer = cc.Layer.extend({
                         this.playEff(Effs.Mul_2, 2, new cc.Point(pos.x, pos.y+40));
                     case 1:
                         for(var idx in arrClicked){
-                            this.arrBoxes[idx].onClick();
+                            this.arrBoxes[arrClicked[idx]].onClick();
                         }
                         break;
                 }
@@ -186,18 +186,23 @@ var GameLayer = cc.Layer.extend({
                             score = eff2._score;
                         }
                         this.addScore(score);
-                        for(var i=0; i<3; i++){
-                            this.arrBoxes[i].onDestoryOneBox(i);
+                        for(var idx in arrClicked){
+                            this.onDestoryOneBox(arrClicked[idx]);
                         }
                         break;
                     case 3:
                         var score = eff1._score + eff2._score + eff3._score;
                         this.addScore(score*2);
                         this.playEff(Effs.Mul_3, 2, new cc.Point(pos.x, pos.y+40));
-                        for(var i=0; i<3; i++){
-                            this.arrBoxes[i].onClickedOneBox(i);
+                        for(var idx in arrClicked){
+                            this.arrBoxes[arrClicked[idx]].onClick();
                         }
                         break;
+                }
+                break;
+            default :
+                for(var idx in arrClicked){
+                    this.arrBoxes[arrClicked[idx]].onClick();
                 }
                 break;
         }
@@ -285,7 +290,7 @@ var GameLayer = cc.Layer.extend({
         scMgr.runScene(sc_idx.GAME_OVER);
     },
     onClickedOneBox:function(idx){
-        cc.log("clicked: "+idx);
+//        cc.log("clicked: "+idx);
         this.removeChild(this.arrBoxes[idx], true);
 
         var box = new Treasure();
@@ -295,7 +300,7 @@ var GameLayer = cc.Layer.extend({
         this.arrBoxes[idx] = box;
     },
     onDestoryOneBox:function(idx){
-        cc.log("onDestoryOneBox:"+idx);
+//        cc.log("onDestoryOneBox:"+idx);
         this.removeChild(this.arrBoxes[idx], true);
 
         var box = new Treasure();
@@ -305,11 +310,11 @@ var GameLayer = cc.Layer.extend({
         this.arrBoxes[idx] = box;
     },
     addScore:function(score){
-        cc.log("addScore: "+score);
+//        cc.log("addScore: "+score);
         this.scoreV.addScore(score);
     },
     subBlood:function(blood){
-        cc.log("subBlood: "+blood);
+//        cc.log("subBlood: "+blood);
         this.hp.subBlood(blood);
     }
 });

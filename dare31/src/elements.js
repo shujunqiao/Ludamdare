@@ -1,5 +1,5 @@
 
-var MAX_BLOOD = 20;
+var MAX_BLOOD = 100;
 
 var HPStatus = cc.Layer.extend({
     bloodBar:null,
