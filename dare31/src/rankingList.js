@@ -23,7 +23,7 @@ var RankingList = cc.Layer.extend({
         var t1 = curStorage.getItem(TOP_KEY.t1);
         var t2 = curStorage.getItem(TOP_KEY.t2);
         var t3 = curStorage.getItem(TOP_KEY.t3);
-        console.log("in rankinglist:",t1,t2,t3);
+//        console.log("in rankinglist:",t1,t2,t3);
         this.arrList = [];
         if(t1 != undefined && t1 != null)
             this.arrList.push(parseInt(t1));
@@ -39,7 +39,7 @@ var RankingList = cc.Layer.extend({
         var str = "";
         //
         var rankN = this.getThisRank(score);
-        console.log(this.arrList);
+//        console.loglog(this.arrList);
         //
 //        this.arrList.sort();
 //        console.log(this.arrList);
@@ -47,7 +47,7 @@ var RankingList = cc.Layer.extend({
         for(var idx in this.arrList){
             var temp = parseInt(idx)+1;
             var key = "t"+temp.toString();
-            console.log("key:", key);
+//            console.log("key:", key);
             curStorage.setItem(TOP_KEY[key], this.arrList[idx]);
         }
         //display top3

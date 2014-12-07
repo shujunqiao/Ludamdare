@@ -27,6 +27,9 @@ var HPStatus = cc.Layer.extend({
             gGameLayer.gameOver(false);
             return;
         }
+        if(this._blood > MAX_BLOOD){
+            this._blood = MAX_BLOOD;
+        }
         this.setBlood(this._blood);
     },
     addBlood:function(blood){
@@ -268,7 +271,7 @@ var Treasure = cc.Layer.extend({
         return true;
     },
     onClick:function(){
-        console.log("onClick:",this.getIdx());
+//        console.log("onClick:",this.getIdx());
         cc.log("bloodEff:"+this._effect.bloodEff);
         if(!gGameLayer){
             return;
@@ -283,6 +286,11 @@ var Treasure = cc.Layer.extend({
                 cc.log("will sub blood.");
                 gGameLayer.playEff(Effs.Sub_Blood, 10, this.getPosition());
                 gGameLayer.subBlood(SUB_BLOOD_NUM);
+                break;
+            case BLOOD_EFF.ADD_LIFE:
+                gGameLayer.playEff(Effs.Add_Blood, 10, this.getPosition());
+                gGameLayer.addBlood(SUB_BLOOD_NUM);
+                gGameLayer.onDestoryOneBox(this.getIdx());
                 break;
         }
         if(gGameLayer){

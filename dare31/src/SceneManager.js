@@ -21,7 +21,7 @@ var SceneManager = cc.Class.extend({
         this.addScene(GameOverScene, sc_idx.GAME_OVER);
     },
     runScene:function(idx){
-        console.log("scmgr, idx:", idx, arr_sc.length);
+//        console.log("scmgr, idx:", idx, arr_sc.length);
         if(arr_sc[idx] != null ){
             if (isFirstRunScene)
                 isFirstRunScene = false;

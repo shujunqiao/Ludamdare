@@ -1,12 +1,14 @@
 
 var BLOOD_EFF = {
     SUB_BLOOD:0,
-    ADD_BLOOD:1
+    ADD_BLOOD:1,
+    ADD_LIFE:100
 }
 
 var BaseEffect = cc.Class.extend({
     _idx:0,
     bloodEff:0,
+
     ctor:function(){
 //        this._super();
 
@@ -59,13 +61,23 @@ var EffectAdd50 = EffectAdd.extend({
     }
 });
 
+var EffectAddLife = BaseEffect.extend({
+    ctor:function(){
+        this._super();
+
+        this.bloodEff = BLOOD_EFF.ADD_LIFE;
+    }
+});
+
 var EffectBomb = BaseEffect.extend({
     ctor:function(){
+        this._super();
+
         this.bloodEff = BLOOD_EFF.SUB_BLOOD;
     }
 });
 
-var AllEffects = [EffectAdd20, EffectAdd30, EffectAdd40, EffectAdd50, EffectBomb];
+var AllEffects = [EffectAdd20, EffectAdd30, EffectAdd40, EffectAdd50, EffectBomb, EffectAddLife];
 
 var GetGameEffect = function(){
     var idx = GetRandomNum(0, AllEffects.length);
@@ -82,7 +94,7 @@ var AddScore = cc.Layer.extend({
         if(!score){
             score = 0;
         }
-        console.log("AddScore, type:", type);
+//        console.log("AddScore, type:", type);
         if(undefined == type){
             type = Symbol.ADD;
         }

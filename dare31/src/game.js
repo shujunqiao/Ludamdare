@@ -14,7 +14,7 @@ var BORDER_PLAY = {
 };
 
 var gGameLayer = null;
-var GAME_END_TIMER = 100;
+var GAME_END_TIMER = 60;
 
 var EFF_INTERVAL_FRAME = 6;
 var EFF_SPACE_Y = 5;
@@ -25,7 +25,8 @@ var Effs = {
     Bomb_1:2,
     Bomb_2:3,
     Sub_Blood:4,
-    Add_Score:5
+    Add_Score:5,
+    Add_Blood:6
 };
 
 var GameLayer = cc.Layer.extend({
@@ -160,7 +161,7 @@ var GameLayer = cc.Layer.extend({
                 arrClicked.push(i);
             }
         }
-        console.log("clicked:", arrClicked.length);
+//        console.log("clicked:", arrClicked.length);
         switch (arrClicked.length){
             case 1:
                 this.arrBoxes[arrClicked[0]].onClick();
@@ -275,7 +276,7 @@ var GameLayer = cc.Layer.extend({
                 ly.setPosition(pos);
                 break;
         }
-        console.log("will playEff:", idx);
+//        console.log("will playEff:", idx);
     },
     onEndScale:function(obj){
         if(null != obj){
@@ -361,6 +362,10 @@ var GameLayer = cc.Layer.extend({
 //        cc.log("subBlood: "+blood);
         PlayMusic.getInstance().playSound(SOUND_TYPE.BOMB);
         this.hp.subBlood(blood);
+    },
+    addBlood:function(blood){
+        PlayMusic.getInstance().playSound(SOUND_TYPE.PO_0);
+        this.hp.addBlood(blood);
     }
 });
 
