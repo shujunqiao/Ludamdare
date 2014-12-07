@@ -30,7 +30,7 @@ var MyLayer = cc.Layer.extend({
                 scMgr.runScene(sc_idx.GAME);
             },this);
         btnBegin.setAnchorPoint(0.5, 0.5);
-        btnBegin.setPosition(size.width*0.8,size.height*0.27);
+        btnBegin.setPosition(size.width*0.9,size.height*0.27);
 
         var menu = cc.Menu.create(btnBegin);
         menu.setPosition(0, 0);

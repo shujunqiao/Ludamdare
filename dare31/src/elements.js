@@ -1,5 +1,5 @@
 
-var MAX_BLOOD = 200;
+var MAX_BLOOD = 20;
 
 var HPStatus = cc.Layer.extend({
     bloodBar:null,
@@ -12,7 +12,7 @@ var HPStatus = cc.Layer.extend({
         this.bloodBar = new ccui.LoadingBar(res.sliderProgress_png);
         this.bloodBar.setName("LoadingBar");
         this.bloodBar.setPercent(100);
-        this.bloodBar.setScale(2.5);
+        this.bloodBar.setScale(1.2);
 
         this.addChild(this.bloodBar);
 
@@ -183,8 +183,8 @@ var Score = BaseNumber.extend({
 });
 
 var Symbol = {
-    ADD:0,
-    SUB:1,
+    SUB:0,
+    ADD:1,
     MUL:2
 };
 
@@ -273,10 +273,12 @@ var Treasure = cc.Layer.extend({
         switch (this._effect.bloodEff){
             case BLOOD_EFF.ADD_BLOOD:
                 cc.log("eff score:"+this._effect._score);
+                gGameLayer.playEff(Effs.Add_Score, this._effect._score, this.getPosition());
                 gGameLayer.addScore(this._effect._score);
                 break;
             case BLOOD_EFF.SUB_BLOOD:
                 cc.log("will sub blood.");
+                gGameLayer.playEff(Effs.Sub_Blood, 10, this.getPosition());
                 gGameLayer.subBlood(SUB_BLOOD_NUM);
                 break;
         }

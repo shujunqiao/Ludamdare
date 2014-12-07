@@ -18,6 +18,8 @@ var res = {
     btn_End_1:"res/end_selected.png",
     btn_Return_0:"res/return_0.png",
     btn_Return_1:"res/return_1.png",
+    btn_exit_0:"res/exit_0.png",
+    btn_exit_1:"res/exit_0.png",
     symbol_png:"res/symbol.png",
     number_score:"res/number_score.png",
     number_time:"res/number_time.png",

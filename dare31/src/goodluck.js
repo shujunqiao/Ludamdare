@@ -75,3 +75,33 @@ var GetGameEffect = function(){
     return eff;
 }
 
+var AddScore = cc.Layer.extend({
+    ctor:function(score, type){
+        this._super();
+
+        if(!score){
+            score = 0;
+        }
+        console.log("AddScore, type:", type);
+        if(undefined == type){
+            type = Symbol.ADD;
+        }
+        var spAdd = new SpSymbol(type);
+        this.addChild(spAdd);
+        spAdd.setPosition(0,0);
+        var res_file = res.number_life;
+        switch (type){
+            case Symbol.SUB:
+                res_file = res.number_score;
+                break;
+            case Symbol.MUL:
+                res_file = res.number_lan;
+                break;
+        }
+        var spScore = new BaseNumber(res_file);
+        this.addChild(spScore);
+        spScore.setNumber(score);
+        spScore.setPosition(23,-2);
+    }
+});
+

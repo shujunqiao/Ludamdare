@@ -26,25 +26,34 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="945" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1560">
+            <state line="71" column="5" selection-start="2215" selection-end="2215" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="game.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="9" selection-start="4926" selection-end="4926" vertical-scroll-proportion="-12.115385" vertical-offset="2235" max-vertical-offset="3930">
+            <state line="72" column="16" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.36525974" vertical-offset="855" max-vertical-offset="5160">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="elements.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SceneManager.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SceneManager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="4" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="780">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="elements.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/elements.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="270" column="19" selection-start="6622" selection-end="6622" vertical-scroll-proportion="0.512987" vertical-offset="3734" max-vertical-offset="4815">
+            <state line="28" column="9" selection-start="696" selection-end="696" vertical-scroll-proportion="-16.153847" vertical-offset="0" max-vertical-offset="4845">
               <folding />
             </state>
           </provider>
@@ -53,7 +62,7 @@
       <file leaf-file-name="gameOver.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gameOver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="9" selection-start="470" selection-end="470" vertical-scroll-proportion="-4.6538463" vertical-offset="164" max-vertical-offset="780">
+            <state line="16" column="9" selection-start="397" selection-end="397" vertical-scroll-proportion="-8.692307" vertical-offset="14" max-vertical-offset="945">
               <folding />
             </state>
           </provider>
@@ -62,7 +71,7 @@
       <file leaf-file-name="resource.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resource.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="36" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+            <state line="20" column="14" selection-start="765" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
               <folding />
             </state>
           </provider>
@@ -71,7 +80,7 @@
       <file leaf-file-name="goodluck.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/goodluck.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="4" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+            <state line="80" column="0" selection-start="1575" selection-end="1575" vertical-scroll-proportion="-9.615385" vertical-offset="950" max-vertical-offset="1695">
               <folding />
             </state>
           </provider>
@@ -100,16 +109,16 @@
         <option value="$PROJECT_DIR$/src/HPStatus.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/effects.js" />
-        <option value="$PROJECT_DIR$/src/goodluck.js" />
         <option value="$PROJECT_DIR$/src/SceneManager.js" />
         <option value="$PROJECT_DIR$/src/GameOverScene.js" />
         <option value="$PROJECT_DIR$/project.json" />
         <option value="$PROJECT_DIR$/src/rankingList.js" />
-        <option value="$PROJECT_DIR$/src/gameOver.js" />
-        <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/src/resource.js" />
+        <option value="$PROJECT_DIR$/src/app.js" />
+        <option value="$PROJECT_DIR$/src/goodluck.js" />
         <option value="$PROJECT_DIR$/src/elements.js" />
+        <option value="$PROJECT_DIR$/src/gameOver.js" />
         <option value="$PROJECT_DIR$/src/game.js" />
       </list>
     </option>
@@ -287,13 +296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/sprites/CCSprite.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1142" column="33" selection-start="40584" selection-end="40584" vertical-scroll-proportion="0.11056106" vertical-offset="16703" max-vertical-offset="24315">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="25" selection-start="433" selection-end="433" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="450">
@@ -304,13 +306,6 @@
     <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/CCBoot.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1621" column="27" selection-start="50400" selection-end="50400" vertical-scroll-proportion="-7.423077" vertical-offset="23777" max-vertical-offset="32865">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="945" selection-end="945" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1560">
           <folding />
         </state>
       </provider>
@@ -331,20 +326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SceneManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="22" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameOver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="9" selection-start="470" selection-end="470" vertical-scroll-proportion="-4.6538463" vertical-offset="164" max-vertical-offset="780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="34" selection-start="2724" selection-end="2724" vertical-scroll-proportion="0.0" vertical-offset="331" max-vertical-offset="990">
@@ -361,28 +342,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resource.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="36" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+        <state line="20" column="14" selection-start="765" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frameworks/cocos2d-html5/cocos2d/core/sprites/CCSprite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="302" column="0" selection-start="11983" selection-end="11983" vertical-scroll-proportion="0.33227345" vertical-offset="3961" max-vertical-offset="24315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="5" selection-start="2215" selection-end="2215" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/goodluck.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="9" selection-start="4926" selection-end="4926" vertical-scroll-proportion="-12.115385" vertical-offset="2235" max-vertical-offset="3930">
+        <state line="80" column="0" selection-start="1575" selection-end="1575" vertical-scroll-proportion="-9.615385" vertical-offset="950" max-vertical-offset="1695">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/elements.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="270" column="19" selection-start="6622" selection-end="6622" vertical-scroll-proportion="0.512987" vertical-offset="3734" max-vertical-offset="4815">
+        <state line="28" column="9" selection-start="696" selection-end="696" vertical-scroll-proportion="-16.153847" vertical-offset="0" max-vertical-offset="4845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameOver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="9" selection-start="397" selection-end="397" vertical-scroll-proportion="-8.692307" vertical-offset="14" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SceneManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="4" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="16" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.36525974" vertical-offset="855" max-vertical-offset="5160">
           <folding />
         </state>
       </provider>

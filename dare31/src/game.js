@@ -14,13 +14,18 @@ var BORDER_PLAY = {
 };
 
 var gGameLayer = null;
-var GAME_END_TIMER = 660;
+var GAME_END_TIMER = 63;
+
+var EFF_INTERVAL_FRAME = 6;
+var EFF_SPACE_Y = 5;
 
 var Effs = {
     Mul_2:0,
     Mul_3:1,
     Bomb_1:2,
-    Bomb_2:3
+    Bomb_2:3,
+    Sub_Blood:4,
+    Add_Score:5
 };
 
 var GameLayer = cc.Layer.extend({
@@ -68,11 +73,11 @@ var GameLayer = cc.Layer.extend({
         //add hp
         this.hp = new HPStatus();
         this.addChild(this.hp);
-        this.hp.setPosition(100, size.height-23);
+        this.hp.setPosition(160, size.height-23);
 
         this.scoreV = new SpScore();
         this.addChild(this.scoreV, 1);
-        this.scoreV.setPosition(size.width-100, size.height-70);
+        this.scoreV.setPosition(size.width-80, size.height-70);
 
         this.timerV = new BaseNumber(res.number_time);
         this.addChild(this.timerV);
@@ -82,8 +87,8 @@ var GameLayer = cc.Layer.extend({
 //        this.addChild(num);
 //        num.setPosition(100,100);
 
-        var eff = new EffectAdd();
-        cc.log("eff:"+eff.bloodEff);
+//        var eff = new EffectAdd();
+//        cc.log("eff:"+eff.bloodEff);
 
         //add boxes
         this.arrBoxes = [];
@@ -150,14 +155,13 @@ var GameLayer = cc.Layer.extend({
                 var sun = eff1.bloodEff + eff2.bloodEff;
                 switch (sun){
                     case 0:
-                        this.playEff(Effs.Bomb_2);
+                        //this.playEff(Effs.Bomb_2);
                         this.gameOver(false);
                         break;
                     case 2:
-                        console.log(222);
                         var score = eff1._score + eff2._score;
                         this.addScore(score);
-                        this.playEff(Effs.Mul_3);
+                        this.playEff(Effs.Mul_2, 2, new cc.Point(pos.x, pos.y+40));
                     case 1:
                         for(var idx in arrClicked){
                             this.arrBoxes[idx].onClick();
@@ -167,22 +171,82 @@ var GameLayer = cc.Layer.extend({
             }
                 break;
             case 3:
+                var eff1 = this.arrBoxes[arrClicked[0]]._effect;
+                var eff2 = this.arrBoxes[arrClicked[1]]._effect;
+                var eff3 = this.arrBoxes[arrClicked[2]]._effect;
+                var sum = eff1.bloodEff + eff2.bloodEff + eff3.bloodEff;
+                switch (sum){
+                    case 0:
+                    case 1:
+                        this.gameOver(false);
+                        break;
+                    case 2:
+                        var score = eff1._score;
+                        if (!score){
+                            score = eff2._score;
+                        }
+                        this.addScore(score);
+                        for(var i=0; i<3; i++){
+                            this.arrBoxes[i].onDestoryOneBox(i);
+                        }
+                        break;
+                    case 3:
+                        var score = eff1._score + eff2._score + eff3._score;
+                        this.addScore(score*2);
+                        this.playEff(Effs.Mul_3, 2, new cc.Point(pos.x, pos.y+40));
+                        for(var i=0; i<3; i++){
+                            this.arrBoxes[i].onClickedOneBox(i);
+                        }
+                        break;
+                }
                 break;
         }
     },
-    playEff:function(idx){
+    playEff:function(idx, score, pos){
+        cc.log("playEff:"+idx);
         switch (idx){
             case Effs.Mul_2:
-//                var eff =
+                var ly = new AddScore(2, Symbol.MUL);
+                ly.time = 2;
+                ly.setPosition(pos);
+                this.addChild(ly);
+                this._curEffects[this.getIdxOfEff()] = ly;
                 break;
             case Effs.Mul_3:
+                var ly = new AddScore(3, Symbol.MUL);
+                ly.time = 2;
+                ly.setPosition(pos);
+                this.addChild(ly);
+                this._curEffects[this.getIdxOfEff()] = ly;
                 break;
             case Effs.Bomb_1:
                 break;
             case Effs.Bomb_2:
                 break;
+            case Effs.Add_Score:
+                var ly = new AddScore(score);
+                ly.time = 2;
+                ly.setPosition(pos);
+                this.addChild(ly);
+                this._curEffects[this.getIdxOfEff()] = ly;
+                break;
+            case Effs.Sub_Blood:
+                var ly = new AddScore(score, Symbol.SUB);
+                ly.time = 2;
+                ly.setPosition(pos);
+                this.addChild(ly);
+                this._curEffects[this.getIdxOfEff()] = ly;
+                break;
         }
         console.log("will playEff:", idx);
+    },
+    getIdxOfEff:function(){
+        var idx = 0;
+        for(var i=0; i<this._curEffects.length; i++){
+            if(this._curEffects[i] == null)
+                return i;
+        }
+        return this._curEffects.length;
     },
     update:function(dx){
         if(!this.bGameEnd){
@@ -194,12 +258,30 @@ var GameLayer = cc.Layer.extend({
                     this.gameOver(true);
                 }
             }
+            if(this._curEffects.length > 0){
+                if(this._count % EFF_INTERVAL_FRAME == 0){
+                    for(var item in this._curEffects){
+                        if(this._curEffects[item] != null){
+                            this._curEffects[item].time -= 0.1;
+                            if(this._curEffects[item].time < 0){
+                                this.removeChild(this._curEffects[item], true);
+                                this._curEffects[item] = null;
+                            }
+                            else{
+                                var i_y = this._curEffects[item].y + EFF_SPACE_Y;
+                                this._curEffects[item].setPositionY(i_y);
+                            }
+                        }
+                    }
+                }
+            }
             this._count ++;
         }
     },
     gameOver:function(isWin){
         cc.log("game is over:"+isWin);
         this.bGameEnd = true;
+        setGameOverStatus(isWin);
         scMgr.runScene(sc_idx.GAME_OVER);
     },
     onClickedOneBox:function(idx){
