@@ -3,7 +3,7 @@ var scMgr = null;
 
 var TIMER_MINUTE = 60;
 
-var BOX_NUM_MAX = 12;
+var BOX_NUM_MAX = 18;
 
 var BOX_RADIUS = 60;
 var BORDER_PLAY = {
@@ -91,6 +91,17 @@ var GameLayer = cc.Layer.extend({
 
 //        var eff = new EffectAdd();
 //        cc.log("eff:"+eff.bloodEff);
+
+//        var ly = new cc.Sprite(res.eff_bomb);
+//        ly.setScale(0.1);
+//        ly.runAction(
+//            cc.sequence(
+//                cc.scaleTo(0.5, 1, 1),
+//                cc.callFunc(this.onEndScale, this)
+//            )
+//        );
+//        this.addChild(ly);
+//        ly.setPosition(100,100);
 
         //add boxes
         this.arrBoxes = [];
@@ -251,9 +262,25 @@ var GameLayer = cc.Layer.extend({
                 ly.setPosition(pos);
                 this.addChild(ly);
                 this._curEffects[this.getIdxOfEff()] = ly;
+
+                var ly = new cc.Sprite(res.eff_bomb);
+                ly.setScale(0.1);
+                ly.runAction(
+                    cc.sequence(
+                        cc.scaleTo(0.3, 1, 1),
+                        cc.callFunc(this.onEndScale, this)
+                    )
+                );
+                this.addChild(ly);
+                ly.setPosition(pos);
                 break;
         }
         console.log("will playEff:", idx);
+    },
+    onEndScale:function(obj){
+        if(null != obj){
+            obj.removeFromParent(true);
+        }
     },
     getIdxOfEff:function(){
         var idx = 0;
@@ -338,7 +365,7 @@ var GameLayer = cc.Layer.extend({
 });
 
 var getRandAction = function(){
-    var dTime = GetRandomNum(2,5);
+    var dTime = GetRandomNum(7,9);
     var dx = GetRandomNum(-300,300);
     var dy = GetRandomNum(-300,300);
     var act = cc.moveBy(dTime, new cc.Point(dx,dy), 0);

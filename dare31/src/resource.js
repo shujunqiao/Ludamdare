@@ -34,7 +34,8 @@ var res = {
     sound_win:"res/win.wav",
     Font_arial:"res/arial.ttf",
     Font_bmf_ttf:"res/bitmapFont.fnt",
-    Font_bmf_png:"res/bitmapFont.png"
+    Font_bmf_png:"res/bitmapFont.png",
+    eff_bomb:"res/eff_bomb.png"
 };
 
 var g_resources = [];
