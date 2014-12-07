@@ -14,7 +14,14 @@ var BORDER_PLAY = {
 };
 
 var gGameLayer = null;
-var GAME_END_TIMER = 60;
+var GAME_END_TIMER = 660;
+
+var Effs = {
+    Mul_2:0,
+    Mul_3:1,
+    Bomb_1:2,
+    Bomb_2:3
+};
 
 var GameLayer = cc.Layer.extend({
     hp:null,
@@ -24,6 +31,8 @@ var GameLayer = cc.Layer.extend({
     _count:0,
     curSecond:0,
     bGameEnd:false,
+    touchBeganPos:null,
+    _curEffects:null,
     init:function () {
 
         //////////////////////////////
@@ -91,6 +100,15 @@ var GameLayer = cc.Layer.extend({
             this.arrBoxes[i] = box;
         }
 
+        cc.eventManager.addListener({
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            swallowTouches: true,
+            onTouchBegan: this.onTouchBegan,
+            onTouchMoved: this.onTouchMoved,
+            onTouchEnded: this.onTouchEnded,
+            onTouchCancelled: this.onTouchCancelled
+        }, this);
+
 //        var symbol = new SpSymbol(2);
 //        this.addChild(symbol);
 //        symbol.setPosition(200,200);
@@ -99,7 +117,72 @@ var GameLayer = cc.Layer.extend({
         this._count = 0;
         this.curSecond = 0;
         this.bGameEnd = false;
+        this.touchBeganPos = new cc.Point(0,0);
+        this._curEffects = [];
         this.scheduleUpdate();
+    },
+    onTouchBegan:function(touch, event){
+        this.touchBeganPos = touch.getLocation();
+        return true;
+    },
+    onTouchMoved:function(touch, event){
+        ;
+    },
+    onTouchEnded:function(touch, event){
+        var endPos = touch.getLocation();
+        gGameLayer.checkTouchBox(endPos);
+    },
+    checkTouchBox:function(pos){
+        var arrClicked = []
+        for(var i=0; i<BOX_NUM_MAX; i++){
+            if( this.arrBoxes[i].checkTouched(pos) ){
+                arrClicked.push(i);
+            }
+        }
+        console.log("clicked:", arrClicked.length);
+        switch (arrClicked.length){
+            case 1:
+                this.arrBoxes[arrClicked[0]].onClick();
+                break;
+            case 2:{
+                var eff1 = this.arrBoxes[arrClicked[0]]._effect;
+                var eff2 = this.arrBoxes[arrClicked[1]]._effect;
+                var sun = eff1.bloodEff + eff2.bloodEff;
+                switch (sun){
+                    case 0:
+                        this.playEff(Effs.Bomb_2);
+                        this.gameOver(false);
+                        break;
+                    case 2:
+                        console.log(222);
+                        var score = eff1._score + eff2._score;
+                        this.addScore(score);
+                        this.playEff(Effs.Mul_3);
+                    case 1:
+                        for(var idx in arrClicked){
+                            this.arrBoxes[idx].onClick();
+                        }
+                        break;
+                }
+            }
+                break;
+            case 3:
+                break;
+        }
+    },
+    playEff:function(idx){
+        switch (idx){
+            case Effs.Mul_2:
+//                var eff =
+                break;
+            case Effs.Mul_3:
+                break;
+            case Effs.Bomb_1:
+                break;
+            case Effs.Bomb_2:
+                break;
+        }
+        console.log("will playEff:", idx);
     },
     update:function(dx){
         if(!this.bGameEnd){
@@ -121,6 +204,16 @@ var GameLayer = cc.Layer.extend({
     },
     onClickedOneBox:function(idx){
         cc.log("clicked: "+idx);
+        this.removeChild(this.arrBoxes[idx], true);
+
+        var box = new Treasure();
+        this.addChild(box);
+        box.setPosition(getRandPos());
+        box.setIdx(idx);
+        this.arrBoxes[idx] = box;
+    },
+    onDestoryOneBox:function(idx){
+        cc.log("onDestoryOneBox:"+idx);
         this.removeChild(this.arrBoxes[idx], true);
 
         var box = new Treasure();

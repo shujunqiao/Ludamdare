@@ -210,26 +210,61 @@ var SpSymbol = cc.Layer.extend({
 
 var SUB_BLOOD_NUM = 10;
 
+var FRAME_IN_PER_CHANGE = 20;
+var BOX_LIFT_TIME = 30*FRAME_IN_PER_CHANGE;
+
+var BOX_SCALE_SMALL = 0.5;
+var BOX_SCALE_LARGE = 0.51;
+
+var BOX_TOUCH_SIZE = {w:50, h:50};
 var Treasure = cc.Layer.extend({
     _idx:0,
     _effect:null,
+    _imgSt0:null,
+//    _imgSt1:null,
+    _count:0,
+    _display:false,
     ctor:function(){
         this._super();
         var menu = new cc.Menu();
         menu.x = 0;
         menu.y = 0;
-        var box = new cc.MenuItemImage(res.Box_png,
-                                        res.Box_png,
-                                        this.onClick,
-                                        this);
-        box.x = 0;
-        box.y = 0;
-        menu.addChild(box);
-        this.addChild(menu);
+//        var box = new cc.MenuItemImage(res.Box_png,
+//                                        res.Box_png,
+//                                        this.onClick,
+//                                        this);
+//        box.x = 0;
+//        box.y = 0;
+//        menu.addChild(box);
+//        this.addChild(menu);
+        var strBox = getRandColorBox();
+        this._imgSt0 = new cc.Sprite(res[strBox+"1"]);
+//        this._imgSt1 = new cc.Sprite(res[strBox+"2"]);
+
+        this._imgSt0.setPosition(0,0);
+        this._imgSt0.setScale(BOX_SCALE_SMALL);
+//        this._imgSt1.setPosition(0,0);
+//        this._imgSt1.setScale(1.05);
+//        console.log(this._imgSt0, this._imgSt1);
+
+        this.addChild(this._imgSt0);
+//        this.addChild(this._imgSt1);
 
         this._effect = GetGameEffect();
+        this._count = 0;
+        this._display = false;
+
+        this.scheduleUpdate();
     },
-    onClick:function(btn){
+    checkTouched:function(pos){
+        console.log("checkTouched, pos:", pos, this.x, this.y);
+        if(pos.x < this.x-BOX_TOUCH_SIZE.w || pos.x > this.x+BOX_TOUCH_SIZE.w ||
+            pos.y > this.y+BOX_TOUCH_SIZE.h || pos.y < this.y-BOX_TOUCH_SIZE.h){
+            return false;
+        }
+        return true;
+    },
+    onClick:function(){
         console.log("onClick:",this.getIdx());
         cc.log("bloodEff:"+this._effect.bloodEff);
         if(!gGameLayer){
@@ -249,6 +284,21 @@ var Treasure = cc.Layer.extend({
             gGameLayer.onClickedOneBox(this._idx);
         }
     },
+    update:function(dx){
+        if(this._count > BOX_LIFT_TIME){
+            gGameLayer.onDestoryOneBox(this._idx);
+        }
+        if(this._count % FRAME_IN_PER_CHANGE == 0){
+            if(this._display){
+                this._imgSt0.setScale(BOX_SCALE_SMALL);
+            }
+            else{
+                this._imgSt0.setScale(BOX_SCALE_LARGE);
+            }
+            this._display = !this._display;
+        }
+        this._count ++;
+    },
     setIdx:function(idx){
         this._idx = idx;
     },
@@ -257,3 +307,9 @@ var Treasure = cc.Layer.extend({
     }
 });
 
+var allColorBox = ["Box_red_", "Box_yellow_", "Box_blue_"];
+var getRandColorBox = function(){
+    var idx = GetRandomNum(0, allColorBox.length);
+    idx %= allColorBox.length;
+    return allColorBox[idx];
+};
